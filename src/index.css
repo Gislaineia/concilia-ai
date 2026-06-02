@@ -1,0 +1,88 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  font-family: "Inter", system-ui, sans-serif;
+  background-color: #f6f8fb;
+  color: #0f172a;
+  -webkit-font-smoothing: antialiased;
+}
+
+@layer components {
+  .card {
+    @apply bg-white rounded-xl border border-slate-200/70 shadow-soft;
+  }
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-colors;
+  }
+  .btn-primary {
+    @apply btn bg-brand-600 text-white hover:bg-brand-700;
+  }
+  .btn-ghost {
+    @apply btn bg-transparent text-slate-700 hover:bg-slate-100;
+  }
+  .btn-outline {
+    @apply btn border border-slate-300 text-slate-700 hover:bg-slate-50;
+  }
+  .input {
+    @apply w-full rounded-lg border border-slate-300 bg-white px-3 py-2 text-sm placeholder:text-slate-400 focus:border-brand-500 focus:outline-none focus:ring-2 focus:ring-brand-100;
+  }
+  .label {
+    @apply text-xs font-medium text-slate-600 uppercase tracking-wide;
+  }
+  .badge {
+    @apply inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-xs font-medium;
+  }
+  .badge-ok {
+    @apply badge bg-emerald-100 text-emerald-700;
+  }
+  .badge-warn {
+    @apply badge bg-amber-100 text-amber-700;
+  }
+  .badge-crit {
+    @apply badge bg-rose-100 text-rose-700;
+  }
+  .badge-info {
+    @apply badge bg-brand-100 text-brand-700;
+  }
+  .badge-muted {
+    @apply badge bg-slate-100 text-slate-600;
+  }
+  .table-base {
+    @apply w-full text-sm text-left;
+  }
+  .table-base th {
+    @apply font-semibold text-slate-600 px-4 py-3 border-b border-slate-200 bg-slate-50/60 uppercase tracking-wide text-xs;
+  }
+  .table-base td {
+    @apply px-4 py-3 border-b border-slate-100 text-slate-700;
+  }
+  .table-base tr:hover td {
+    @apply bg-slate-50/60;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 8px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
